@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { ErrorWrapper } from "../error-wrapper"
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +24,9 @@ export default function OtherLayout({
         }}>
           <p>Header</p>
         </header>
-        {children}
+        <ErrorWrapper>
+          {children}
+        </ErrorWrapper>
         <footer style={{
           backgroundColor: "ghostwhite",
           padding: "1rem"
